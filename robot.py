@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import RPi.GPIO as GPIO
 import time
 GPIO.setmode(GPIO.BCM)
@@ -22,10 +21,10 @@ def stop():
 
 def forward(speed):
     stop()
-    motor_a_direction_control.ChangeDutyCycle(speed)
-    motor_a_speed_control.ChangeDutyCycle(100)
-    motor_b_direction_control.ChangeDutyCycle(speed)
-    motor_b_speed_control.ChangeDutyCycle(100)
+    motor_a_direction_control.ChangeDutyCycle(0)
+    motor_a_speed_control.ChangeDutyCycle(speed)
+    motor_b_direction_control.ChangeDutyCycle(0)
+    motor_b_speed_control.ChangeDutyCycle(speed)
 
 def reverse(speed):
     stop()
